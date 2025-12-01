@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quest Real Estate Services</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+  <style>
+    .hero-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('https://static.wixstatic.com/media/a2c7ee_09d6f84e131440678b252f2a4d2cea03~mv2.png/v1/fill/w_1536,h_958,al_c,q_90,enc_avif,quality_auto/a2c7ee_09d6f84e131440678b252f2a4d2cea03~mv2.png');
+      background-size: cover;
+      background-position: center 80%;
+      filter: grayscale(100%);
+      z-index: -1;
+    }
+    .logo-img {
+      max-height: 65px;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.45);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .quest-highlight {
+      background-color: #f3b338;
+      border-color: #f3b338;
+      color: #ffffff;
+    }
+    .quest-highlight:hover,
+    .quest-highlight:focus {
+      background-color: #e0a52f;
+      border-color: #e0a52f;
+      color: #ffffff;
+    }
+  .service-hover:hover,
+    .service-hover:focus {
+      border-color: #f3b338 !important;
+      color: #f3b338 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section pb-0">
+    <div class="container has-text-centered">
+      <figure class="image is-inline-block">
+        <img class="logo-img" src="https://static.wixstatic.com/media/a2c7ee_99eb2947fb274ed5ba42b55d65c09786~mv2.png/v1/fill/w_454,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bac478ae88a4-1.png" />
+      </figure>
+      
+    </div>
+  </section>
+
+  <section class="hero is-fullheight hero-bg">
+    <div class="hero-body overlay has-text-centered">
+      <h1 class="title has-text-white is-size-2-mobile is-size-1-tablet">Real Estate, <span style="color:#f3b338;">Real Simple.</span></h1>
+      
+
+      <div class="buttons is-centered is-flex is-justify-content-center is-align-items-center mt-5">
+        <a href="#commercial" class="button is-light is-outlined service-hover">Commercial</a>
+        <a href="#management" class="button is-light is-outlined service-hover">Management</a>
+        <a href="#residential" class="button is-light is-outlined service-hover">Residential</a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <footer class="footer py-4">
+    <div class="content has-text-centered has-text-grey">
+      © <span id="year"></span> Quest Real Estate Services.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
