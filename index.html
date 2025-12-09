@@ -7,9 +7,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --accent: #f3b338;
+    }
+    body {
+      background: #f8f9fb;
+      color: #0f172a;
+    }
     .hero-bg {
       position: relative;
       overflow: hidden;
+      min-height: 100vh;
     }
     .hero-bg::before {
       content: "";
@@ -21,81 +29,168 @@
       filter: grayscale(100%);
       z-index: -1;
     }
-    .logo-img {
-      max-height: 65px;
-    }
     .overlay {
-      background: rgba(0,0,0,0.45);
-      padding: 2rem 1.5rem;
-      padding-top: 30vh;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0.25) 100%);
+      z-index: 0;
+    }
+    .hero-body {
+      position: relative;
+      z-index: 1;
+      align-items: flex-start;
+      padding-top: 10vh;
+    }
+    .hero-content {
+      max-width: 620px;
+      text-align: left;
+    }
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+    .logo-img {
+      max-height: 40px;
+    }
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .hero-subtitle {
+      color: #e5e7eb;
+      max-width: 520px;
+      margin-top: 1rem;
+    }
+    .button-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .action-button {
+      border-radius: 999px;
+      padding-inline: 1.25rem;
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .action-button:hover,
+    .action-button:focus {
+      border-color: var(--accent);
+      color: #111827;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    .accent-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-left: 0.4rem;
+    }
+    .minimal-footer {
+      background: #0b1221;
+      color: #dbeafe;
+      padding: 1.5rem 1.25rem;
+    }
+    .footer-links {
       display: flex;
       flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    .footer-links a {
+      color: #dbeafe;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 3px;
+    }
+    .footer-links a:hover,
+    .footer-links a:focus {
+      border-color: rgba(243, 179, 56, 0.6);
+      color: #fff;
+    }
+    .socials {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+    .socials a {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transition: all 0.2s ease;
     }
-    .quest-highlight {
-      background-color: #f3b338;
-      border-color: #f3b338;
-      color: #ffffff;
+    .socials a:hover,
+    .socials a:focus {
+      background: #fff;
+      color: #0b1221;
+      border-color: #fff;
     }
-    .quest-highlight:hover,
-    .quest-highlight:focus {
-      background-color: #e0a52f;
-      border-color: #e0a52f;
-      color: #ffffff;
-    }
-  .service-hover:hover,
-    .service-hover:focus {
-      border-color: #f3b338 !important;
-      color: #f3b338 !important;
-    }
-    .logo-section {
-      padding-top: 1.25rem;
-      padding-bottom: 0.5rem;
-    }
-    .contact-links a {
-      color: #4a4a4a;
-      margin: 0 0.75rem;
-    }
-    .contact-links a:hover,
-    .contact-links a:focus {
-      color: #f3b338;
-    }
-    .modern-footer {
-      background: #ffffff;
-      color: #1f2937;
-      border-top: 1px solid #e5e7eb;
-      padding: 1.5rem 1.5rem;
+    @media screen and (max-width: 768px) {
+      .hero-body {
+        align-items: stretch;
+        padding-top: 6vh;
+        padding-inline: 1.25rem;
+      }
+      .hero-content {
+        text-align: left;
+      }
+      .action-button {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <section class="section pb-0 logo-section">
-    <div class="container has-text-centered">
-      <figure class="image is-inline-block">
-        <img class="logo-img" src="https://static.wixstatic.com/media/a2c7ee_99eb2947fb274ed5ba42b55d65c09786~mv2.png/v1/fill/w_454,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bac478ae88a4-1.png" />
-      </figure>
-      
-    </div>
-  </section>
+  <section class="hero hero-bg is-fullheight">
+    <div class="overlay"></div>
+    <div class="hero-body">
+      <div class="hero-content">
+        <div class="logo-mark mb-5">
+          <img class="logo-img" src="https://static.wixstatic.com/media/a2c7ee_99eb2947fb274ed5ba42b55d65c09786~mv2.png/v1/fill/w_454,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bac478ae88a4-1.png" alt="Quest Real Estate Services logo">
+          <span class="has-text-white has-text-weight-semibold">Quest</span>
+        </div>
 
-  <section class="hero is-fullheight hero-bg">
-    <div class="hero-body overlay has-text-centered">
-      <h1 class="title has-text-white is-size-2-mobile is-size-1-tablet">Real Estate, <span style="color:#f3b338;">Real Simple.</span></h1>
-      
+        <h1 class="title has-text-white hero-title is-size-2-mobile is-size-1-tablet is-size-1-desktop">
+          Real Estate, <span style="color: var(--accent);">Real Simple</span><span class="accent-dot"></span>
+        </h1>
+        <p class="hero-subtitle is-size-5">Boutique brokerage and management guidance for commercial and residential properties, tailored for the way you live and work.</p>
 
-      <div class="buttons is-centered is-flex is-justify-content-center is-align-items-center mt-5">
-        <a href="#commercial" class="button is-light is-outlined service-hover">Commercial</a>
-        <a href="#management" class="button is-light is-outlined service-hover">Management</a>
-        <a href="#residential" class="button is-light is-outlined service-hover">Residential</a>
+        <div class="button-row">
+          <a href="#commercial" class="button action-button">Commercial</a>
+          <a href="#management" class="button action-button">Management</a>
+          <a href="#residential" class="button action-button">Residential</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer modern-footer py-4">
-    <div class="container has-text-centered contact-links is-flex is-justify-content-center is-align-items-center is-flex-wrap-wrap">
-      <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" class="icon-text" target="_blank" rel="noopener">
+  <footer class="minimal-footer">
+    <div class="container footer-links">
+      <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" target="_blank" rel="noopener" class="icon-text">
         <span class="icon"><i class="fas fa-location-dot"></i></span>
         <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
       </a>
@@ -103,18 +198,16 @@
         <span class="icon"><i class="fas fa-phone"></i></span>
         <span>858 . 415 . 5455</span>
       </a>
-      <a href="https://www.facebook.com/profile.php?id=61573212516623" class="icon is-medium" target="_blank" rel="noopener">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/questreservices/" class="icon is-medium" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i>
-      </a>
+      <div class="socials">
+        <a href="https://www.facebook.com/profile.php?id=61573212516623" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/questreservices/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
