@@ -124,8 +124,8 @@
       background: #ffffff;
       color: var(--text-dark);
       border-top: 1px solid #f3f4f6;
-      padding: 2rem 1.5rem;
-      font-size: 0.95rem;
+      padding: 1rem 1.5rem; /* More compact padding */
+      font-size: 0.9rem;
     }
 
     .footer-content {
@@ -159,12 +159,6 @@
 
     .social-icon:hover {
       transform: scale(1.1);
-    }
-
-    .copyright {
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-      color: #6b7280;
     }
 
     /* Animations */
@@ -251,18 +245,8 @@
         </div>
 
       </div>
-
-      <div class="copyright has-text-centered">
-        &copy; <span id="year"></span> Quest Real Estate Services. All rights reserved.
-      </div>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('year').textContent = new Date().getFullYear();
-    });
-  </script>
 
 </body>
 </html>
