@@ -5,116 +5,261 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quest Real Estate Services</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnHWK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --accent: #f3b338;
+      --ink: #0f172a;
+      --muted: #6b7280;
+      --surface: rgba(255, 255, 255, 0.82);
+    }
+
+    html, body {
+      background: #fdfcf9;
+      color: var(--ink);
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+
     .hero-bg {
       position: relative;
       overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
+
     .hero-bg::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url('images/hero-bg.jpg');
+      background-image: linear-gradient(115deg, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.25)), url('images/hero-bg.jpg');
       background-size: cover;
       background-position: center 80%;
       filter: grayscale(100%);
+      z-index: -2;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 2rem;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
       z-index: -1;
+      backdrop-filter: blur(4px);
     }
+
+    .logo-mark {
+      position: absolute;
+      top: 1.75rem;
+      left: 1.75rem;
+      background: var(--surface);
+      border-radius: 50%;
+      padding: 0.75rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
     .logo-img {
-      max-height: 65px;
+      height: 54px;
+      width: auto;
+      display: block;
     }
+
     .overlay {
-      background: rgba(0,0,0,0.45);
-      padding: 2rem 1.5rem;
-      padding-top: 30vh;
+      padding: 3.5rem 1.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      gap: 1.5rem;
     }
-    .quest-highlight {
-      background-color: #f3b338;
-      border-color: #f3b338;
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .eyebrow .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1.title {
       color: #ffffff;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      font-size: clamp(2.4rem, 4vw + 1rem, 4rem);
     }
-    .quest-highlight:hover,
-    .quest-highlight:focus {
-      background-color: #e0a52f;
-      border-color: #e0a52f;
+
+    h1.title span {
+      color: var(--accent);
+    }
+
+    .subtext {
+      max-width: 720px;
+      color: #e5e7eb;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .pill-buttons {
+      display: inline-flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ghost-btn {
+      border-radius: 999px;
+      padding: 0.95rem 1.35rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.07);
       color: #ffffff;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(6px);
     }
-  .service-hover:hover,
-    .service-hover:focus {
-      border-color: #f3b338 !important;
-      color: #f3b338 !important;
+
+    .ghost-btn:hover,
+    .ghost-btn:focus {
+      background: var(--surface);
+      color: var(--ink);
+      border-color: var(--surface);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
     }
-    .logo-section {
-      padding-top: 1.25rem;
-      padding-bottom: 0.5rem;
+
+    .sleek-footer {
+      background: #0b1224;
+      color: #e5e7eb;
+      padding: 1.75rem 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .contact-links a {
-      color: #4a4a4a;
-      margin: 0 0.75rem;
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
     }
-    .contact-links a:hover,
-    .contact-links a:focus {
-      color: #f3b338;
+
+    .footer-grid .address,
+    .footer-grid .phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #cbd5e1;
+      font-weight: 500;
     }
-    .modern-footer {
-      background: #ffffff;
-      color: #1f2937;
-      border-top: 1px solid #e5e7eb;
-      padding: 1.5rem 1.5rem;
+
+    .footer-grid .address i,
+    .footer-grid .phone i {
+      color: var(--accent);
+    }
+
+    .socials {
+      display: inline-flex;
+      gap: 0.75rem;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .socials a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: grid;
+      place-items: center;
+      color: #e5e7eb;
+      transition: all 0.2s ease;
+    }
+
+    .socials a:hover,
+    .socials a:focus {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 900px) {
+      .hero-bg::after {
+        inset: 1.25rem;
+        border-radius: 18px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .socials {
+        justify-content: center;
+      }
+
+      .logo-mark {
+        position: static;
+        margin: 1.5rem auto 0;
+      }
     }
   </style>
 </head>
 <body>
-
-  <section class="section pb-0 logo-section">
-    <div class="container has-text-centered">
-      <figure class="image is-inline-block">
-        <img class="logo-img" src="https://static.wixstatic.com/media/a2c7ee_99eb2947fb274ed5ba42b55d65c09786~mv2.png/v1/fill/w_454,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bac478ae88a4-1.png" />
-      </figure>
-      
-    </div>
-  </section>
-
   <section class="hero is-fullheight hero-bg">
-    <div class="hero-body overlay has-text-centered">
-      <h1 class="title has-text-white is-size-2-mobile is-size-1-tablet">Real Estate, <span style="color:#f3b338;">Real Simple.</span></h1>
-      
-
-      <div class="buttons is-centered is-flex is-justify-content-center is-align-items-center mt-5">
-        <a href="#commercial" class="button is-light is-outlined service-hover">Commercial</a>
-        <a href="#management" class="button is-light is-outlined service-hover">Management</a>
-        <a href="#residential" class="button is-light is-outlined service-hover">Residential</a>
+    <div class="logo-mark">
+      <img class="logo-img" src="https://static.wixstatic.com/media/a2c7ee_99eb2947fb274ed5ba42b55d65c09786~mv2.png/v1/fill/w_454,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bac478ae88a4-1.png" alt="Quest Real Estate Services" />
+    </div>
+    <div class="hero-body overlay">
+      <div class="eyebrow"><span class="dot"></span> Quest Real Estate Services</div>
+      <h1 class="title">Real Estate, <span>Real Simple.</span></h1>
+      <p class="subtext">Boutique representation rooted in honesty, clarity, and calm expertise. Commercial, management, and residential services delivered with discreet precision.</p>
+      <div class="pill-buttons">
+        <a href="#commercial" class="ghost-btn">Commercial</a>
+        <a href="#management" class="ghost-btn">Management</a>
+        <a href="#residential" class="ghost-btn">Residential</a>
       </div>
     </div>
   </section>
 
-  <footer class="footer modern-footer py-4">
-    <div class="container has-text-centered contact-links is-flex is-justify-content-center is-align-items-center is-flex-wrap-wrap">
-      <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" class="icon-text" target="_blank" rel="noopener">
-        <span class="icon"><i class="fas fa-location-dot"></i></span>
-        <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
-      </a>
-      <a href="tel:8584155455" class="icon-text">
-        <span class="icon"><i class="fas fa-phone"></i></span>
-        <span>858 . 415 . 5455</span>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61573212516623" class="icon is-medium" target="_blank" rel="noopener">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/questreservices/" class="icon is-medium" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i>
-      </a>
+  <footer class="footer sleek-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" class="address" target="_blank" rel="noopener">
+          <i class="fas fa-location-dot"></i>
+          <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
+        </a>
+        <a href="tel:8584155455" class="phone">
+          <i class="fas fa-phone"></i>
+          <span>858 · 415 · 5455</span>
+        </a>
+        <div class="socials">
+          <a href="https://www.facebook.com/profile.php?id=61573212516623" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/questreservices/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
 </body>
 </html>
