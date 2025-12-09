@@ -5,116 +5,249 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quest Real Estate Services</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnHWK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --accent: #f3b338;
+      --surface: rgba(15, 15, 15, 0.7);
+    }
+
+    body {
+      background: #0b0c10;
+      color: #f5f5f5;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      letter-spacing: 0.01em;
+    }
+
     .hero-bg {
       position: relative;
       overflow: hidden;
+      isolation: isolate;
     }
+
     .hero-bg::before {
       content: "";
       position: absolute;
       inset: 0;
       background-image: url('images/hero-bg.jpg');
       background-size: cover;
-      background-position: center 80%;
-      filter: grayscale(100%);
+      background-position: center 75%;
+      filter: grayscale(100%) contrast(1.05);
+      transform: scale(1.02);
+      z-index: -2;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.82), rgba(12, 12, 12, 0.7));
       z-index: -1;
     }
-    .logo-img {
-      max-height: 65px;
-    }
-    .overlay {
-      background: rgba(0,0,0,0.45);
-      padding: 2rem 1.5rem;
-      padding-top: 30vh;
-      display: flex;
-      flex-direction: column;
+
+    .hero-body {
       align-items: center;
+      padding: 5rem 1.75rem;
+    }
+
+    .hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      display: grid;
+      gap: 2.75rem;
+      text-align: center;
+    }
+
+    .logo-mark {
+      position: absolute;
+      top: 1.75rem;
+      right: 1.75rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 0.85rem 1rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #f5f5f5;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .logo-img {
+      max-height: 46px;
+      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+    }
+
+    .headline {
+      font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: rgba(245, 245, 245, 0.8);
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 32px;
+      background: rgba(245, 245, 245, 0.35);
+    }
+
+    .lede {
+      color: rgba(245, 245, 245, 0.78);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .pill-actions {
+      display: inline-flex;
       justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
     }
-    .quest-highlight {
-      background-color: #f3b338;
-      border-color: #f3b338;
-      color: #ffffff;
+
+    .pill-actions a {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #f5f5f5;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: all 0.2s ease;
     }
-    .quest-highlight:hover,
-    .quest-highlight:focus {
-      background-color: #e0a52f;
-      border-color: #e0a52f;
-      color: #ffffff;
+
+    .pill-actions a:hover,
+    .pill-actions a:focus {
+      border-color: var(--accent);
+      color: #111;
+      background: var(--accent);
+      box-shadow: 0 12px 30px rgba(243, 179, 56, 0.25);
     }
-  .service-hover:hover,
-    .service-hover:focus {
-      border-color: #f3b338 !important;
-      color: #f3b338 !important;
+
+    .modern-footer {
+      background: #0b0c10;
+      color: rgba(245, 245, 245, 0.75);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.75rem 1.5rem;
     }
-    .logo-section {
-      padding-top: 1.25rem;
-      padding-bottom: 0.5rem;
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    .contact-links {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
     .contact-links a {
-      color: #4a4a4a;
-      margin: 0 0.75rem;
+      color: inherit;
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: center;
+      letter-spacing: 0.01em;
     }
+
     .contact-links a:hover,
     .contact-links a:focus {
-      color: #f3b338;
+      color: var(--accent);
     }
-    .modern-footer {
-      background: #ffffff;
-      color: #1f2937;
-      border-top: 1px solid #e5e7eb;
-      padding: 1.5rem 1.5rem;
+
+    .social-links a {
+      color: inherit;
+      margin-left: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .social-links a:hover,
+    .social-links a:focus {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .logo-mark {
+        position: static;
+        justify-self: center;
+      }
+
+      .hero-inner {
+        gap: 2rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
-
-  <section class="section pb-0 logo-section">
-    <div class="container has-text-centered">
-      <figure class="image is-inline-block">
-        <img class="logo-img" src="https://static.wixstatic.com/media/a2c7ee_99eb2947fb274ed5ba42b55d65c09786~mv2.png/v1/fill/w_454,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bac478ae88a4-1.png" />
-      </figure>
-      
-    </div>
-  </section>
-
   <section class="hero is-fullheight hero-bg">
-    <div class="hero-body overlay has-text-centered">
-      <h1 class="title has-text-white is-size-2-mobile is-size-1-tablet">Real Estate, <span style="color:#f3b338;">Real Simple.</span></h1>
-      
+    <div class="hero-body">
+      <div class="hero-inner">
+        <div class="logo-mark">
+          <img class="logo-img" src="https://static.wixstatic.com/media/a2c7ee_99eb2947fb274ed5ba42b55d65c09786~mv2.png/v1/fill/w_454,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bac478ae88a4-1.png" alt="Quest Real Estate logo" />
+          <span>Quest RES</span>
+        </div>
 
-      <div class="buttons is-centered is-flex is-justify-content-center is-align-items-center mt-5">
-        <a href="#commercial" class="button is-light is-outlined service-hover">Commercial</a>
-        <a href="#management" class="button is-light is-outlined service-hover">Management</a>
-        <a href="#residential" class="button is-light is-outlined service-hover">Residential</a>
+        <div class="content">
+          <div class="eyebrow">Real Estate Services</div>
+          <h1 class="title has-text-white headline">Real Estate, <span style="color: var(--accent);">Real Simple.</span></h1>
+          <p class="lede">Minimal touchpoints, maximal clarity. Quest simplifies brokerage, management, and leasing with a team dedicated to elegant, straightforward service.</p>
+        </div>
+
+        <div class="pill-actions" aria-label="Navigate to service areas">
+          <a href="#commercial">Commercial</a>
+          <a href="#management">Management</a>
+          <a href="#residential">Residential</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer modern-footer py-4">
-    <div class="container has-text-centered contact-links is-flex is-justify-content-center is-align-items-center is-flex-wrap-wrap">
-      <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" class="icon-text" target="_blank" rel="noopener">
-        <span class="icon"><i class="fas fa-location-dot"></i></span>
-        <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
-      </a>
-      <a href="tel:8584155455" class="icon-text">
-        <span class="icon"><i class="fas fa-phone"></i></span>
-        <span>858 . 415 . 5455</span>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61573212516623" class="icon is-medium" target="_blank" rel="noopener">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/questreservices/" class="icon is-medium" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i>
-      </a>
+  <footer class="footer modern-footer">
+    <div class="container footer-inner">
+      <div class="contact-links">
+        <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" target="_blank" rel="noopener">
+          <span class="icon"><i class="fas fa-location-dot"></i></span>
+          <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
+        </a>
+        <a href="tel:8584155455">
+          <span class="icon"><i class="fas fa-phone"></i></span>
+          <span>858 · 415 · 5455</span>
+        </a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61573212516623" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/questreservices/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
 </body>
 </html>
