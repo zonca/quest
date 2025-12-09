@@ -5,116 +5,207 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quest Real Estate Services</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnHWK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --accent: #f3b338;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background: #fdfdfd;
+    }
+
     .hero-bg {
       position: relative;
+      min-height: 100vh;
       overflow: hidden;
     }
+
     .hero-bg::before {
       content: "";
       position: absolute;
       inset: 0;
       background-image: url('images/hero-bg.jpg');
       background-size: cover;
-      background-position: center 80%;
+      background-position: center 70%;
       filter: grayscale(100%);
-      z-index: -1;
+      transform: scale(1.03);
     }
-    .logo-img {
-      max-height: 65px;
-    }
-    .overlay {
-      background: rgba(0,0,0,0.45);
-      padding: 2rem 1.5rem;
-      padding-top: 30vh;
+
+    .hero-body.overlay {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(145deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.35));
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
     }
-    .quest-highlight {
-      background-color: #f3b338;
-      border-color: #f3b338;
+
+    .logo-badge {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-img {
+      max-height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .tagline {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .pill-buttons {
+      display: inline-flex;
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pill-buttons .button {
+      background: rgba(255, 255, 255, 0.08);
       color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      padding: 0.75rem 1.4rem;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
     }
-    .quest-highlight:hover,
-    .quest-highlight:focus {
-      background-color: #e0a52f;
-      border-color: #e0a52f;
-      color: #ffffff;
-    }
-  .service-hover:hover,
-    .service-hover:focus {
-      border-color: #f3b338 !important;
-      color: #f3b338 !important;
-    }
-    .logo-section {
-      padding-top: 1.25rem;
-      padding-bottom: 0.5rem;
-    }
-    .contact-links a {
-      color: #4a4a4a;
-      margin: 0 0.75rem;
-    }
-    .contact-links a:hover,
-    .contact-links a:focus {
-      color: #f3b338;
-    }
-    .modern-footer {
+
+    .pill-buttons .button:hover,
+    .pill-buttons .button:focus {
       background: #ffffff;
-      color: #1f2937;
+      color: #111827;
+      border-color: #ffffff;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    .accent-dot {
+      color: var(--accent);
+    }
+
+    .footer.sleek-footer {
+      background: #ffffff;
+      color: var(--text-muted);
       border-top: 1px solid #e5e7eb;
-      padding: 1.5rem 1.5rem;
+      padding: 1.5rem 1.5rem 2.25rem;
+    }
+
+    .sleek-footer .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .sleek-footer .contact-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .sleek-footer a {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .sleek-footer a:hover,
+    .sleek-footer a:focus {
+      color: var(--accent);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-icons a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #f3f4f6;
+      color: var(--text-main);
+    }
+
+    .social-icons a:hover,
+    .social-icons a:focus {
+      background: #fff7ec;
+      color: #b57400;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     }
   </style>
 </head>
 <body>
+  <section class="hero hero-bg is-fullheight">
+    <div class="hero-body overlay">
+      <div class="logo-badge">
+        <figure class="image is-96x96">
+          <img class="logo-img" src="https://static.wixstatic.com/media/a2c7ee_99eb2947fb274ed5ba42b55d65c09786~mv2.png/v1/fill/w_454,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bac478ae88a4-1.png" alt="Quest Real Estate Services logo" />
+        </figure>
+        <div class="has-text-weight-semibold is-size-6 has-text-dark">
+          Quest Real Estate Services
+        </div>
+      </div>
 
-  <section class="section pb-0 logo-section">
-    <div class="container has-text-centered">
-      <figure class="image is-inline-block">
-        <img class="logo-img" src="https://static.wixstatic.com/media/a2c7ee_99eb2947fb274ed5ba42b55d65c09786~mv2.png/v1/fill/w_454,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bac478ae88a4-1.png" />
-      </figure>
-      
-    </div>
-  </section>
+      <div class="tagline">
+        <p class="is-size-5 has-text-white has-text-weight-semibold mb-3">Boutique, responsive, and effortless.</p>
+        <h1 class="title has-text-white is-size-2-mobile is-size-1-tablet">
+          Real Estate, <span class="accent-dot">Real Simple.</span>
+        </h1>
+        <p class="subtitle has-text-white-bis mt-4">Curated commercial, residential, and management services that move as fast as you do.</p>
 
-  <section class="hero is-fullheight hero-bg">
-    <div class="hero-body overlay has-text-centered">
-      <h1 class="title has-text-white is-size-2-mobile is-size-1-tablet">Real Estate, <span style="color:#f3b338;">Real Simple.</span></h1>
-      
-
-      <div class="buttons is-centered is-flex is-justify-content-center is-align-items-center mt-5">
-        <a href="#commercial" class="button is-light is-outlined service-hover">Commercial</a>
-        <a href="#management" class="button is-light is-outlined service-hover">Management</a>
-        <a href="#residential" class="button is-light is-outlined service-hover">Residential</a>
+        <div class="pill-buttons">
+          <a href="#commercial" class="button is-light is-outlined">Commercial</a>
+          <a href="#management" class="button is-light is-outlined">Management</a>
+          <a href="#residential" class="button is-light is-outlined">Residential</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer modern-footer py-4">
-    <div class="container has-text-centered contact-links is-flex is-justify-content-center is-align-items-center is-flex-wrap-wrap">
-      <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" class="icon-text" target="_blank" rel="noopener">
-        <span class="icon"><i class="fas fa-location-dot"></i></span>
-        <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
-      </a>
-      <a href="tel:8584155455" class="icon-text">
-        <span class="icon"><i class="fas fa-phone"></i></span>
-        <span>858 . 415 . 5455</span>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61573212516623" class="icon is-medium" target="_blank" rel="noopener">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/questreservices/" class="icon is-medium" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i>
-      </a>
+  <footer class="footer sleek-footer">
+    <div class="container footer-content">
+      <div class="contact-links">
+        <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" target="_blank" rel="noopener">
+          <span class="icon-text"><span class="icon"><i class="fas fa-location-dot"></i></span><span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span></span>
+        </a>
+        <a href="tel:8584155455">
+          <span class="icon-text"><span class="icon"><i class="fas fa-phone"></i></span><span>858 · 415 · 5455</span></span>
+        </a>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61573212516623" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/questreservices/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
 </body>
 </html>
