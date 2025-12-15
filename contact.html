@@ -18,7 +18,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </noscript>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -28,29 +33,33 @@
     <div class="fixed-bg"></div>
     <div class="overlay-gradient"></div>
 
-    <section class="content-wrapper">
-        <div class="container">
-            <div class="compact-header">
-                <a href="index.html" class="back-button">
-                    <span class="icon"><i class="fas fa-arrow-left"></i></span>
-                    <span>Back to Home</span>
-                </a>
+    <main>
+        <section class="content-wrapper">
+            <div class="container">
+                <div class="compact-header">
+                    <a href="index.html" class="back-button">
+                        <span class="icon"><i class="fas fa-arrow-left"></i></span>
+                        <span>Back to Home</span>
+                    </a>
 
-                <img src="images/quest-logo.png" alt="Quest Real Estate Services Logo" class="hero-logo">
-            </div>
+                    <img src="images/quest-logo-optimized.webp" alt="Quest Real Estate Services Logo" class="hero-logo"
+                        width="800" height="380">
+                </div>
 
-            <div class="glass-panel">
-                <div class="text-content">
-                    <h1>Contact Us</h1>
-                    <div class="google-form-wrapper">
-                        <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSfszYdLoVTzCvGt_AzKjxc_D0b9tHv19nfFvR2M5njOACXP0w/viewform?embedded=true"
-                            width="640" height="816" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <div class="glass-panel">
+                    <div class="text-content">
+                        <h1>Contact Us</h1>
+                        <div class="google-form-wrapper">
+                            <iframe
+                                src="https://docs.google.com/forms/d/e/1FAIpQLSfszYdLoVTzCvGt_AzKjxc_D0b9tHv19nfFvR2M5njOACXP0w/viewform?embedded=true"
+                                width="640" height="816" frameborder="0" marginheight="0"
+                                marginwidth="0">Loading…</iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer-custom">

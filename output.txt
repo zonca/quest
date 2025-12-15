@@ -1,0 +1,470 @@
+PageSpeed Insights
+
+Copy Link
+
+Docs
+
+Report from Dec 14, 2025, 10:39:27 PM
+Analyze
+
+https://questlajolla.com/
+
+Discover what your real users are
+experiencing
+
+No Data
+
+Diagnose performance issues
+
+72
+
+92
+
+100
+
+100
+
+Performance
+
+Accessibility
+
+Best Practices
+
+SEO
+
+72
+Performance
+Values are estimated and may vary. The performance score is calculated
+directly from these metrics. See calculator.
+0–49
+
+50–89
+
+90–100
+
+PageSpeed Insights
+
+Copy Link
+
+METRICS
+
+Docs
+
+Expand view
+
+First Contentful Paint
+
+Largest Contentful Paint
+
+3.9 s
+
+4.7 s
+
+Total Blocking Time
+
+Cumulative Layout Shift
+
+0 ms
+
+0
+
+Speed Index
+
+5.1 s
+Captured at Dec 14, 2025, 10:39
+
+Emulated Moto G Power with
+
+PM PST
+
+Lighthouse 13.0.1
+
+Initial page load
+
+Slow 4G throttling
+
+Single page session
+
+Using HeadlessChromium
+137.0.7151.119 with lr
+
+Show audits relevant to:
+INSIGHTS
+
+Render blocking requests — Est savings of 3,440 ms
+
+All FCP LCP CLS
+
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move
+
+PageSpeed
+Insights
+these network requests out of the critical path. LCP FCP Unscored
+
+Copy Link
+
+Docs
+
+Show 3rd-party resources (3)
+
+questlajolla.com 1st Party
+/style.css (questlajolla.com)
+
+JSDelivr CDN Cdn
+…css/bulma.min.css (cdn.jsdelivr.net)
+
+Cloudflare CDN Cdn
+…css/all.min.css (cdnjs.cloudflare.com)
+
+Google Fonts Cdn
+/css2?family=… (fonts.googleapis.com)
+
+2.5 KiB
+
+240 ms
+
+2.5 KiB
+
+240 ms
+
+51.3 KiB
+
+1,820 ms
+
+51.3 KiB
+
+1,820 ms
+
+19.4 KiB
+
+1,050 ms
+
+19.4 KiB
+
+1,050 ms
+
+1.5 KiB
+
+780 ms
+
+1.5 KiB
+
+780 ms
+
+Improve image delivery — Est savings of 804 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP.
+Learn
+URL more about optimizing image size LCP FCP Unscored
+
+questlajolla.com 1st Party
+
+Transfer
+Size
+
+Duration
+
+1,408.5 KiB
+
+803.7 KiB
+
+1,388.2 KiB
+
+788.7 KiB
+
+body >
+section.
+hero >
+::before
+
+/images/La-Jolla-Drone-Photographyscaled.jpg (questlajolla.com)
+
+<::before>
+
+Using a modern image format (WebP, AVIF) or
+increasing the image compression could improve
+
+788.7 KiB
+
+this image's download size.
+Ques
+t
+Real
+Estat
+e
+Services Logo
+<img src="images/questlogo.png" alt="Quest
+Real Estate Services
+Logo" class="hero-logo">
+
+/images/quest-logo.png (questlajolla.com)
+
+20.3 KiB
+
+15.0 KiB
+
+PageSpeed Insights
+
+Copy Link
+
+Docs
+
+This image file is larger than it needs to be
+(1249x594) for its displayed dimensions (637x303).
+
+15.0 KiB
+
+Use responsive images to reduce the image
+download size.
+URL
+
+Resource
+Size
+
+Network dependency tree
+
+Est Savings
+
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of
+resources, or deferring the download of unnecessary resources to improve page load. LCP Unscored
+
+Maximum critical path latency: 544 ms
+Initial Navigation
+https://questlajolla.com - 255 ms, 1.74 KiB
+/css2?family=… (fonts.googleapis.com) - 263 ms, 1.50 KiB
+…v31/JTUSjIg1_….woff2 (fonts.gstatic.com) - 520 ms, 35.47 KiB
+…v12/LDIoaomQN….woff2 (fonts.gstatic.com) - 520 ms, 27.43 KiB
+…css/bulma.min.css (cdn.jsdelivr.net) - 307 ms, 51.26 KiB
+…css/all.min.css (cdnjs.cloudflare.com) - 285 ms, 19.45 KiB
+…webfonts/fa-brands-400.woff2 (cdnjs.cloudflare.com) - 537 ms, 116.04 KiB
+…webfonts/fa-solid-900.woff2 (cdnjs.cloudflare.com) - 544 ms, 153.69 KiB
+/style.css (questlajolla.com) - 499 ms, 2.54 KiB
+
+Preconnected origins
+
+URL
+
+Resource
+Size
+
+Est Savings
+
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first
+request for that origin is made. The following are the origins that the page preconnected to.
+no origins were preconnected
+
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+
+Font display — Est savings of 20 ms
+Consider setting font-display to swap or optional to ensure text is consistently visible. swap can be
+further optimized to mitigate layout shifts with font metric overrides. FCP Unscored
+
+PageSpeed
+Insights
+Cloudflare CDN Cdn
+
+Copy Link
+
+Docs
+
+…webfonts/fa-solid-900.woff2 (cdnjs.cloudflare.com)
+
+20 ms
+
+…webfonts/fa-brands-400.woff2 (cdnjs.cloudflare.com)
+
+20 ms
+
+LCP breakdown
+URL
+
+Est Savings
+
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+
+DIAGNOSTICS
+
+Reduce unused CSS — Est savings of 59 KiB
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease
+bytes consumed by network activity. Learn how to reduce unused CSS. LCP FCP Unscored
+
+URL
+
+JSDelivr CDN Cdn
+…css/bulma.min.css (cdn.jsdelivr.net)
+
+Cloudflare CDN Cdn
+…css/all.min.css (cdnjs.cloudflare.com)
+
+Transfer
+
+Est
+
+Size
+
+Savings
+
+50.4 KiB
+
+41.1 KiB
+
+50.4 KiB
+
+41.1 KiB
+
+18.4 KiB
+
+18.2 KiB
+
+18.4 KiB
+
+18.2 KiB
+
+Image elements do not have explicit width and height
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+
+PASSED AUDITS (19)
+
+Show
+
+PageSpeed Insights
+
+Copy Link
+
+92
+
+Docs
+
+Accessibility
+These checks highlight opportunities to improve the accessibility of your
+web app. Automatic detection can only detect a subset of issues and does
+not guarantee the accessibility of your web app, so manual testing is also
+encouraged.
+
+NAMES AND LABELS
+
+Links do not have a discernible name
+These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for
+users of assistive technology, like a screen reader.
+
+BEST PRACTICES
+
+Document does not have a main landmark.
+These items highlight common accessibility best practices.
+
+ADDITIONAL ITEMS TO MANUALLY CHECK (10)
+
+Show
+
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an
+accessibility review.
+
+PASSED AUDITS (14)
+
+NOT APPLICABLE (44)
+
+smartphone
+
+Mobile
+
+computer
+
+Desktop
+Show
+
+Show
+
+PageSpeed Insights
+
+Copy Link
+
+Docs
+
+100
+Best Practices
+
+TRUST AND SAFETY
+
+Ensure CSP is effective against XSS attacks
+Use a strong HSTS policy
+Ensure proper origin isolation with COOP
+Mitigate clickjacking with XFO or CSP
+Mitigate DOM-based XSS with Trusted Types
+
+PASSED AUDITS (13)
+
+Show
+
+NOT APPLICABLE (2)
+
+Show
+
+100
+SEO
+
+These checks ensure that your page is following basic search engine
+optimization advice. There are many additional factors Lighthouse does
+PageSpeed Insights
+
+Copy Link
+
+Docs
+
+not score here that may affect your search ranking, including performance
+on Core Web Vitals. Learn more about Google Search Essentials.
+
+ADDITIONAL ITEMS TO MANUALLY CHECK (1)
+
+Hide
+
+Structured data is valid
+Run these additional validators on your site to check additional SEO best practices.
+
+PASSED AUDITS (8)
+
+Show
+
+NOT APPLICABLE (2)
+
+Show
+
+More on PageSpeed Insights
+
+Related Content
+
+Connect
+
+What's new
+
+Updates
+
+Twitter
+
+Documentation
+
+Web Fundamentals
+
+Youtube
+
+Learn about Web Performance
+
+Case Studies
+
+Ask questions on Stack Overflow
+
+Podcasts
+
+Mailing list
+
+Chrome
+
+Terms and Privacy Policy
+For details, see the Google Developers Site Policies.
+
+Firebase
+
+All products
+
+

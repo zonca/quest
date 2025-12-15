@@ -18,7 +18,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </noscript>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -26,82 +31,85 @@
 <body>
 
   <!-- Single Full Page Hero -->
-  <section class="hero is-fullheight hero-bg">
-    <div class="overlay">
+  <main>
+    <section class="hero is-fullheight hero-bg">
+      <div class="overlay">
 
-      <!-- Top Nav -->
-      <div class="top-nav">
-        <a href="contact.html" class="button is-glass">
-          <span class="is-hidden-mobile">Contact</span>
-          <span class="icon is-small"><i class="fas fa-envelope"></i></span>
-        </a>
+        <!-- Top Nav -->
+        <div class="top-nav">
+          <a href="contact.html" class="button is-glass" aria-label="Contact">
+            <span class="is-hidden-mobile">Contact</span>
+            <span class="icon is-small"><i class="fas fa-envelope"></i></span>
+          </a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="has-text-centered">
+          <img src="images/quest-logo-optimized.webp" alt="Quest Real Estate Services Logo" class="hero-logo"
+            width="800" height="380">
+          <h1 class="title is-size-1-tablet is-size-2-mobile has-text-white hero-title">
+            Real Estate, <br class="is-hidden-tablet"><span>Real Simple.</span>
+          </h1>
+
+          <div class="buttons is-centered service-buttons">
+            <a href="home-sales.html" class="button is-glass">
+              <span>Home Sales</span>
+              <span class="icon is-small"><i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="investment-opportunities.html" class="button is-glass">
+              <span>Investment Opportunities</span>
+              <span class="icon is-small"><i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="property-management.html" class="button is-glass">
+              <span>Property Management</span>
+              <span class="icon is-small"><i class="fas fa-arrow-right"></i></span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Contact Info Block (Formerly Footer) -->
+        <div class="contact-container">
+
+          <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
+            <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" target="_blank"
+              rel="noopener" class="contact-info-item">
+              <span class="icon"><i class="fas fa-location-dot"></i></span>
+              <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
+            </a>
+
+            <a href="tel:8584155455" class="contact-info-item">
+              <span class="icon"><i class="fas fa-phone"></i></span>
+              <span>858 . 415 . 5455</span>
+            </a>
+
+            <a href="mailto:info@questassetdevelopment.com" class="contact-info-item">
+              <span class="icon"><i class="fas fa-envelope"></i></span>
+              <span>info@questassetdevelopment.com</span>
+            </a>
+          </div>
+
+          <div class="is-flex social-links">
+            <a href="https://www.facebook.com/profile.php?id=61573212516623" target="_blank" rel="noopener"
+              aria-label="Facebook">
+              <span class="icon social-icon"><i class="fab fa-facebook"></i></span>
+            </a>
+            <a href="https://www.instagram.com/questreservices/" target="_blank" rel="noopener" aria-label="Instagram">
+              <span class="icon social-icon"><i class="fab fa-instagram"></i></span>
+            </a>
+            <a href="qr.html" aria-label="QR Code">
+              <span class="icon social-icon"><i class="fas fa-qrcode"></i></span>
+            </a>
+          </div>
+
+          <div class="copyright">
+            <p>&copy; <span id="year">2025</span> Quest Real Estate Services. All rights reserved.</p>
+          </div>
+
+        </div>
       </div>
-
-      <!-- Main Content -->
-      <div class="has-text-centered">
-        <img src="images/quest-logo.png" alt="Quest Real Estate Services Logo" class="hero-logo">
-        <h1 class="title is-size-1-tablet is-size-2-mobile has-text-white hero-title">
-          Real Estate, <br class="is-hidden-tablet"><span>Real Simple.</span>
-        </h1>
-
-        <div class="buttons is-centered service-buttons">
-          <a href="home-sales.html" class="button is-glass">
-            <span>Home Sales</span>
-            <span class="icon is-small"><i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="investment-opportunities.html" class="button is-glass">
-            <span>Investment Opportunities</span>
-            <span class="icon is-small"><i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="property-management.html" class="button is-glass">
-            <span>Property Management</span>
-            <span class="icon is-small"><i class="fas fa-arrow-right"></i></span>
-          </a>
-        </div>
-
-      </div>
-
-      <!-- Contact Info Block (Formerly Footer) -->
-      <div class="contact-container">
-
-        <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
-          <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" target="_blank"
-            rel="noopener" class="contact-info-item">
-            <span class="icon"><i class="fas fa-location-dot"></i></span>
-            <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
-          </a>
-
-          <a href="tel:8584155455" class="contact-info-item">
-            <span class="icon"><i class="fas fa-phone"></i></span>
-            <span>858 . 415 . 5455</span>
-          </a>
-
-          <a href="mailto:info@questassetdevelopment.com" class="contact-info-item">
-            <span class="icon"><i class="fas fa-envelope"></i></span>
-            <span>info@questassetdevelopment.com</span>
-          </a>
-        </div>
-
-        <div class="is-flex social-links">
-          <a href="https://www.facebook.com/profile.php?id=61573212516623" target="_blank" rel="noopener"
-            aria-label="Facebook">
-            <span class="icon social-icon"><i class="fab fa-facebook"></i></span>
-          </a>
-          <a href="https://www.instagram.com/questreservices/" target="_blank" rel="noopener" aria-label="Instagram">
-            <span class="icon social-icon"><i class="fab fa-instagram"></i></span>
-          </a>
-          <a href="qr.html" aria-label="QR Code">
-            <span class="icon social-icon"><i class="fas fa-qrcode"></i></span>
-          </a>
-        </div>
-
-        <div class="copyright">
-          <p>&copy; <span id="year">2025</span> Quest Real Estate Services. All rights reserved.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();

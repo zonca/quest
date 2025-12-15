@@ -6,16 +6,19 @@
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-border: rgba(255, 255, 255, 0.15);
 }
+
 @font-face {
   font-family: "911 Porscha";
   src: url("images/fonts/911porschav3cond.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
+
 html {
   scroll-behavior: smooth;
   height: 100%;
 }
+
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,12 +28,14 @@ body {
   color: var(--text-dark);
   margin: 0;
 }
+
 h1,
 h2,
 h3 {
   font-family: Montserrat, sans-serif;
   color: #fff !important;
 }
+
 .hero-bg {
   position: relative;
   overflow: hidden;
@@ -38,43 +43,46 @@ h3 {
   display: flex;
   flex-direction: column;
 }
+
 .hero-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/La-Jolla-Drone-Photography-scaled.jpg");
+  background-image: url("images/bg-optimized.webp");
   background-size: cover;
   background-position: center;
   filter: brightness(0.6);
   z-index: -1;
   animation: subtleZoom 20s infinite alternate linear;
 }
+
 .fixed-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("images/La-Jolla-Drone-Photography-scaled.jpg");
+  background-image: url("images/bg-optimized.webp");
   background-size: cover;
   background-position: center;
   filter: brightness(0.6);
   z-index: -2;
 }
+
 @keyframes subtleZoom {
   from {
     transform: scale(1);
   }
+
   to {
     transform: scale(1.05);
   }
 }
+
 .overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.5) 0,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.5) 0,
+      rgba(0, 0, 0, 0.8) 100%);
   padding: 2rem 1.5rem 30vh 1.5rem;
   flex: 1;
   display: flex;
@@ -82,23 +90,24 @@ h3 {
   align-items: center;
   justify-content: flex-end;
 }
+
 .overlay.is-centered {
   justify-content: center;
   padding: 2rem;
 }
+
 .overlay-gradient {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.5) 0,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.5) 0,
+      rgba(0, 0, 0, 0.8) 100%);
   z-index: -1;
 }
+
 .hero-title {
   font-family: Montserrat, sans-serif;
   font-weight: 800;
@@ -110,6 +119,7 @@ h3 {
   transform: translateY(30px);
   line-height: 1.1;
 }
+
 .hero-title span {
   background: linear-gradient(135deg, var(--primary-gold) 0, #fff 80%);
   background-clip: text;
@@ -117,6 +127,7 @@ h3 {
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
+
 .hero-logo {
   max-width: 400px;
   width: 100%;
@@ -127,6 +138,7 @@ h3 {
   transform: translateY(30px);
   filter: brightness(0) invert(1);
 }
+
 .compact-header .hero-logo {
   max-width: 250px;
   margin: 0;
@@ -139,6 +151,7 @@ h3 {
   animation: none;
   opacity: 1;
 }
+
 .service-buttons {
   gap: 1.5rem;
   flex-wrap: wrap;
@@ -147,6 +160,7 @@ h3 {
   transform: translateY(30px);
   margin-bottom: 3rem;
 }
+
 .button.is-glass {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
@@ -163,6 +177,7 @@ h3 {
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
+
 .button.is-glass:hover {
   background: var(--primary-gold);
   border-color: var(--primary-gold);
@@ -170,13 +185,16 @@ h3 {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(243, 179, 56, 0.25);
 }
+
 .button.is-glass .icon {
   margin-left: 0.5rem;
   transition: transform 0.3s ease;
 }
+
 .button.is-glass:hover .icon {
   transform: translateX(4px);
 }
+
 .contact-container {
   animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
   opacity: 0;
@@ -188,6 +206,7 @@ h3 {
   width: 100%;
   left: 0;
 }
+
 .top-nav {
   position: absolute;
   top: 2rem;
@@ -195,14 +214,17 @@ h3 {
   z-index: 10;
   animation: fadeIn 1.5s ease-out forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 .contact-info-item {
   display: inline-flex;
   align-items: center;
@@ -212,42 +234,51 @@ h3 {
   font-size: 0.95rem;
   transition: color 0.2s;
 }
+
 .contact-info-item:hover {
   color: var(--primary-gold);
 }
+
 .contact-info-item .icon {
   color: var(--primary-gold);
   margin-right: 0.5rem;
 }
+
 .social-links {
   margin-top: 1.5rem;
   gap: 1.5rem;
   justify-content: center;
 }
+
 .social-icon {
   font-size: 1.5rem;
   color: #9ca3af;
   transition: all 0.2s;
 }
+
 .social-icon:hover {
   color: #fff;
   transform: scale(1.1);
 }
+
 .copyright {
   margin-top: 2rem;
   font-size: 0.75rem;
   color: #6b7280;
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .content-wrapper {
   position: relative;
   z-index: 1;
@@ -255,6 +286,7 @@ h3 {
   flex: 1;
   overflow-y: auto;
 }
+
 .glass-panel {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
@@ -264,16 +296,19 @@ h3 {
   padding: 2rem;
   margin-top: 2rem;
 }
+
 .glass-panel.is-centered-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .container {
   position: relative;
   max-width: 960px;
   margin: 0 auto;
 }
+
 .compact-header {
   position: relative;
   display: flex;
@@ -281,35 +316,42 @@ h3 {
   min-height: 60px;
   margin-bottom: 1rem;
 }
+
 .bio-text,
 .text-content {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #e5e7eb;
 }
+
 .text-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
+
 .bio-text p,
 .text-content p {
   margin-bottom: 1.5rem;
 }
+
 .text-content b,
 .text-content strong {
   color: var(--primary-gold);
 }
+
 .text-content ul {
   list-style: none;
   margin-left: 0;
   margin-bottom: 1.5rem;
 }
+
 .text-content li {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.5rem;
 }
+
 .text-content li::before {
   content: "•";
   color: var(--primary-gold);
@@ -317,6 +359,7 @@ h3 {
   left: 0;
   font-weight: 700;
 }
+
 .footer-custom {
   background-color: transparent;
   padding: 3rem 1.5rem;
@@ -325,6 +368,7 @@ h3 {
   position: relative;
   z-index: 1;
 }
+
 .back-button {
   margin-bottom: 0;
   color: #e5e7eb;
@@ -338,15 +382,18 @@ h3 {
   position: relative;
   z-index: 10;
 }
+
 .back-button:hover {
   color: var(--primary-gold);
   background: rgba(255, 255, 255, 0.15);
 }
+
 .google-form-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
 .profile-image {
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -355,9 +402,11 @@ h3 {
   height: auto;
   object-fit: cover;
 }
+
 .name-title {
   margin-bottom: 0.5rem;
 }
+
 .subtitle-role {
   color: var(--primary-gold);
   font-weight: 600;
@@ -366,6 +415,7 @@ h3 {
   margin-bottom: 2rem;
   display: block;
 }
+
 .qr-container {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
@@ -380,12 +430,14 @@ h3 {
   opacity: 0;
   transform: scale(0.9);
 }
+
 .qr-image {
   width: 100%;
   height: auto;
   border-radius: 1rem;
   display: block;
 }
+
 .home-link {
   margin-top: 2rem;
   color: #fff;
@@ -400,57 +452,70 @@ h3 {
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
+
 .home-link:hover {
   background: var(--primary-gold);
   color: #fff;
   border-color: var(--primary-gold);
 }
+
 @keyframes scaleIn {
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
+
 @media screen and (max-width: 768px) {
   .hero-title {
     font-size: 2.75rem !important;
   }
+
   .service-buttons {
     flex-direction: column;
     width: 100%;
     max-width: 300px;
     margin: 0 auto 3rem auto;
   }
+
   .button.is-glass {
     width: 100%;
     justify-content: center;
   }
+
   .contact-info-item {
     display: flex;
     text-align: left;
   }
+
   .top-nav .button.is-glass {
     width: auto;
     padding: 0 1.25rem;
   }
+
   .top-nav .button.is-glass .icon {
     margin: 0;
   }
+
   .compact-header .hero-logo {
     max-width: 150px;
     top: 0;
   }
+
   .back-button span:last-child {
     display: none;
   }
+
   .back-button {
     padding: 0.5rem;
   }
+
   .subpage-logo {
     max-width: 150px;
     top: 0;
   }
 }
+
 .scan-me-title {
   font-family: Montserrat, sans-serif;
   color: var(--primary-gold);
