@@ -282,6 +282,15 @@
         display: flex;
         text-align: left;
       }
+
+      .top-nav .button.is-glass {
+        width: auto;
+        padding: 0 1.25rem;
+      }
+
+      .top-nav .button.is-glass .icon {
+        margin: 0;
+      }
     }
   </style>
 </head>
@@ -295,7 +304,7 @@
       <!-- Top Nav -->
       <div class="top-nav">
         <a href="contact.html" class="button is-glass">
-          <span>Contact</span>
+          <span class="is-hidden-mobile">Contact</span>
           <span class="icon is-small"><i class="fas fa-envelope"></i></span>
         </a>
       </div>
