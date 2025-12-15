@@ -1,0 +1,23 @@
+## DNS updates (Netlify CLI)
+
+- Domain: `questlajolla.com` (DNS zone id: `693f89c6906cc423be0cd5a0`)
+- Added MX records for MailChannels via Netlify API/CLI (priority `0`):
+  - `mx1.mailchannels.net`
+  - `mx2.mailchannels.net`
+- Added SPF TXT record:
+  - Value: `v=spf1 mx include:netblocks.dreamhost.com include:relay.mailchannels.net -all`
+- Added DMARC TXT record (host `_dmarc.questlajolla.com`):
+  - Value: `v=DMARC1; p=none; rua=mailto:andrea@questlajolla.com`
+- Added DKIM TXT record for DreamHost (host `dreamhost._domainkey.questlajolla.com`):
+  - Value: `v=DKIM1; k=rsa; h=sha256; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk1eprnrEQ4zO5ylnbXfBFY6YEEE3QK3IKZ5rxZw3My1DgAzrWkKoqMTL8kstyvYMEimacZ02hfXdnlMmYBhiXXbLKMB9Z4HkyjnZvLAs7kuEt8DE8+7CJsL/i7pu32OjRQ/HETdyE1/56LAxs5ghyS5cYH84EyIImT2AWpeK7h/OKmZkSfFA6t9Uy0xq4qh5ifboQbIOyMsrbk+J6sLvIgx9A6LbXktrYiF3zzyMwhJ9Q5nQrT2ggbjkiSXrlqPdmpbxOgcV4DUktsRwlp280Gyc4F67HJRx5b/FrmMDjRM0PAlDNK8tqhhPG+Ba7rd55zlgLSb8+j3uQWMNhlaLxQIDAQAB`
+- Commands used (note the `body` wrapper):
+  - `netlify api createDnsRecord --data '{"zone_id":"693f89c6906cc423be0cd5a0","body":{"type":"MX","hostname":"questlajolla.com","priority":0,"value":"mx1.mailchannels.net"}}'`
+  - `netlify api createDnsRecord --data '{"zone_id":"693f89c6906cc423be0cd5a0","body":{"type":"MX","hostname":"questlajolla.com","priority":0,"value":"mx2.mailchannels.net"}}'`
+  - `netlify api createDnsRecord --data '{"zone_id":"693f89c6906cc423be0cd5a0","body":{"type":"TXT","hostname":"questlajolla.com","value":"v=spf1 mx include:netblocks.dreamhost.com include:relay.mailchannels.net -all"}}'`
+  - `netlify api createDnsRecord --data '{"zone_id":"693f89c6906cc423be0cd5a0","body":{"type":"TXT","hostname":"_dmarc.questlajolla.com","value":"v=DMARC1; p=none; rua=mailto:andrea@questlajolla.com"}}'`
+  - `netlify api createDnsRecord --data '{"zone_id":"693f89c6906cc423be0cd5a0","body":{"type":"TXT","hostname":"dreamhost._domainkey.questlajolla.com","value":"v=DKIM1; k=rsa; h=sha256; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk1eprnrEQ4zO5ylnbXfBFY6YEEE3QK3IKZ5rxZw3My1DgAzrWkKoqMTL8kstyvYMEimacZ02hfXdnlMmYBhiXXbLKMB9Z4HkyjnZvLAs7kuEt8DE8+7CJsL/i7pu32OjRQ/HETdyE1/56LAxs5ghyS5cYH84EyIImT2AWpeK7h/OKmZkSfFA6t9Uy0xq4qh5ifboQbIOyMsrbk+J6sLvIgx9A6LbXktrYiF3zzyMwhJ9Q5nQrT2ggbjkiSXrlqPdmpbxOgcV4DUktsRwlp280Gyc4F67HJRx5b/FrmMDjRM0PAlDNK8tqhhPG+Ba7rd55zlgLSb8+j3uQWMNhlaLxQIDAQAB"}}'`
+- Verify records:
+  - `netlify api getDnsRecords --data '{"zone_id":"693f89c6906cc423be0cd5a0"}'`
+- Notes:
+  - Netlify CLI’s `createDnsRecord` requires the payload under `body` plus `zone_id` path variable.
+  - Keep any existing NETLIFY/NETLIFYv6 A/AAAA records intact unless intentionally replacing them.
