@@ -10,7 +10,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Libraries -->
@@ -28,6 +29,13 @@
       --glass-bg: rgba(255, 255, 255, 0.08);
       /* More transparent for hero overlap */
       --glass-border: rgba(255, 255, 255, 0.15);
+    }
+
+    @font-face {
+      font-family: '911 Porscha';
+      src: url('images/fonts/911porschav3cond.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
 
     html {
@@ -58,10 +66,10 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url('images/hero-bg.jpg');
+      background-image: url('images/La-Jolla-Drone-Photography-scaled.jpg');
       background-size: cover;
       background-position: center;
-      filter: grayscale(100%) brightness(0.65);
+      filter: brightness(0.60);
       /* Darker for better contrast */
       z-index: -1;
       animation: subtleZoom 20s infinite alternate linear;
@@ -78,8 +86,8 @@
     }
 
     .overlay {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
-      padding: 2rem 1.5rem 8rem 1.5rem;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+      padding: 2rem 1.5rem 30vh 1.5rem;
       /* Increased bottom padding */
       flex: 1;
       display: flex;
@@ -90,6 +98,7 @@
     }
 
     .hero-title {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       /* Bolder */
       letter-spacing: -0.03em;
@@ -103,9 +112,21 @@
 
     .hero-title span {
       background: linear-gradient(135deg, var(--primary-gold) 0%, #fff 80%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: inline-block;
+    }
+
+    .hero-logo {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      opacity: 0;
+      transform: translateY(30px);
+      filter: brightness(0) invert(1);
     }
 
     /* Buttons */
@@ -251,6 +272,7 @@
 
       <!-- Main Content -->
       <div class="has-text-centered">
+        <img src="images/Quest Logos 04.png" alt="Quest Real Estate Services Logo" class="hero-logo">
         <h1 class="title is-size-1-tablet is-size-2-mobile has-text-white hero-title">
           Real Estate, <br class="is-hidden-tablet"><span>Real Simple.</span>
         </h1>
