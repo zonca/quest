@@ -199,6 +199,31 @@
             margin-right: 0.5rem;
         }
 
+        .button.is-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            color: white;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-radius: 100px;
+            padding: 0 2rem;
+            height: 3.5rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .button.is-glass:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            color: var(--primary-gold);
+        }
+
         .back-button {
             margin-bottom: 0;
             color: #e5e7eb;
@@ -266,7 +291,7 @@
 
     <section class="content-wrapper">
         <div class="top-nav">
-            <a href="mailto:info@questassetdevelopment.com" class="button is-glass">
+            <a href="contact.html" class="button is-glass">
                 <span>Contact</span>
                 <span class="icon is-small"><i class="fas fa-envelope"></i></span>
             </a>
