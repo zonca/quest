@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Investment Opportunities - Quest Real Estate Services" />
-    <title>Investment Opportunities - Quest Real Estate Services</title>
+    <meta name="description" content="Contact Us - Quest Real Estate Services" />
+    <title>Contact Us - Quest Real Estate Services</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,6 +108,9 @@
             border-radius: 1.5rem;
             padding: 2rem;
             margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .container {
@@ -131,6 +134,8 @@
             line-height: 1.8;
             color: #e5e7eb;
             /* Light grey text */
+            width: 100%;
+            text-align: center;
         }
 
         .text-content h1 {
@@ -138,35 +143,6 @@
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
-        }
-
-        .text-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .text-content strong,
-        .text-content b {
-            color: var(--primary-gold);
-        }
-
-        .text-content ul {
-            list-style: none;
-            margin-left: 0;
-            margin-bottom: 1.5rem;
-        }
-
-        .text-content li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .text-content li::before {
-            content: "•";
-            color: var(--primary-gold);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
         }
 
         /* Footer Reuse */
@@ -234,6 +210,12 @@
             z-index: 5;
         }
 
+        .google-form-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
         @media screen and (max-width: 768px) {
             .hero-logo {
                 max-width: 150px;
@@ -249,13 +231,6 @@
                 padding: 0.5rem;
             }
         }
-
-        .top-nav {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            z-index: 10;
-        }
     </style>
 </head>
 
@@ -265,13 +240,6 @@
     <div class="overlay-gradient"></div>
 
     <section class="content-wrapper">
-        <div class="top-nav">
-            <a href="mailto:info@questassetdevelopment.com" class="button is-glass">
-                <span>Contact</span>
-                <span class="icon is-small"><i class="fas fa-envelope"></i></span>
-            </a>
-        </div>
-
         <div class="container">
             <div class="compact-header">
                 <a href="index.html" class="back-button">
@@ -284,38 +252,12 @@
 
             <div class="glass-panel">
                 <div class="text-content">
-                    <h1>Investment Opportunities</h1>
-
-                    <p>Quest La Jolla identifies and structures real estate investment opportunities designed to balance
-                        risk, return, and long-term value creation. We focus on opportunities where thoughtful strategy,
-                        operational expertise, and disciplined execution can unlock meaningful upside.</p>
-
-                    <p>Our investment approach is selective and research-driven. We target assets and projects where we
-                        see clear pathways to improvement—through repositioning, redevelopment, operational
-                        efficiencies, or market timing—rather than relying solely on market appreciation.</p>
-
-                    <p><strong>What We Look For:</strong></p>
-                    <ul>
-                        <li>Value-add and opportunistic investments with strong fundamentals</li>
-                        <li>Assets where management, design, or operational improvements can drive returns</li>
-                        <li>Markets with durable demand drivers and long-term growth potential</li>
-                        <li>Opportunities that align investor interests with experienced sponsorship</li>
-                    </ul>
-
-                    <p><strong>Our Investment Philosophy:</strong></p>
-                    <ul>
-                        <li><strong>Capital Preservation First</strong> – Risk is managed through conservative
-                            underwriting and disciplined execution.</li>
-                        <li><strong>Active Ownership</strong> – We stay closely involved throughout the lifecycle of
-                            each investment.</li>
-                        <li><strong>Alignment of Interests</strong> – We invest alongside our partners and structure
-                            opportunities with transparency and accountability.</li>
-                        <li><strong>Long-Term Perspective</strong> – While we remain opportunistic, we prioritize
-                            sustainable value over short-term speculation.</li>
-                    </ul>
-
-                    <p>Whether you are seeking passive exposure or a more strategic partnership, Quest La Jolla offers
-                        access to thoughtfully curated real estate opportunities backed by experience and execution.</p>
+                    <h1>Contact Us</h1>
+                    <div class="google-form-wrapper">
+                        <iframe
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSfszYdLoVTzCvGt_AzKjxc_D0b9tHv19nfFvR2M5njOACXP0w/viewform?embedded=true"
+                            width="640" height="816" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
                 </div>
             </div>
         </div>
