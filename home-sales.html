@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Claudia Cencelli - Realtor® | San Diego • La Jolla • Coastal Properties" />
+    <title>Claudia Cencelli - Quest Real Estate Services</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --primary-gold: #f3b338;
+            --primary-gold-hover: #e0a52f;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            /* Reusing glass var */
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-light);
+            /* Light text default */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        /* Shared Hero Styles */
+        .hero-bg {
+            position: relative;
+            overflow: hidden;
+            /* Important for full page feel */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            /* Fixed background usually helps with the "seamless" feel during scroll */
+            background-image: url('images/La-Jolla-Drone-Photography-scaled.jpg');
+            background-size: cover;
+            background-position: center;
+            /* No grayscale per homepage update */
+            filter: brightness(0.60);
+            z-index: -1;
+        }
+
+        /* We need a wrapper to apply the filter to background only, 
+           but since we want content ON TOP without filter, 
+           the standard way is pseudo-element on a fixed div 
+           OR just replicate the precise structure.
+           Let's replicate the structure: fixed background div. 
+        */
+
+        .fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/La-Jolla-Drone-Photography-scaled.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.60);
+            z-index: -2;
+        }
+
+        .overlay-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+            z-index: -1;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: white !important;
+        }
+
+        .navbar-item.is-active {
+            color: var(--primary-gold) !important;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            padding: 1.5rem 1.5rem;
+            flex: 1;
+            overflow-y: auto;
+            /* Scrollable content */
+        }
+
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.4);
+            /* Darker glass for readability */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .compact-header {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            min-height: 60px;
+            /* Space for logo */
+            margin-bottom: 1rem;
+        }
+
+        .profile-image {
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .bio-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e5e7eb;
+            /* Light grey text */
+        }
+
+        .bio-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .name-title {
+            color: white !important;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle-role {
+            color: var(--primary-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        /* Footer Reuse */
+        .footer-custom {
+            background-color: transparent;
+            /* Transparent to show bg */
+            padding: 3rem 1.5rem;
+            color: #e5e7eb;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info-item {
+            display: inline-flex;
+            align-items: center;
+            margin: 0.5rem 1rem;
+            color: #e5e7eb;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .contact-info-item:hover {
+            color: var(--primary-gold);
+        }
+
+        .contact-info-item .icon {
+            color: var(--primary-gold);
+            margin-right: 0.5rem;
+        }
+
+        .button.is-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            color: white;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-radius: 100px;
+            padding: 0 2rem;
+            height: 3.5rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .button.is-glass:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            color: var(--primary-gold);
+        }
+
+        .back-button {
+            margin-bottom: 0;
+            color: #e5e7eb;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            /* Reset to relative flow within header */
+            z-index: 10;
+        }
+
+        .back-button:hover {
+            color: var(--primary-gold);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-logo {
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            display: block;
+            filter: brightness(0) invert(1);
+            position: absolute;
+            top: -10px;
+            /* Pull up slightly */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-logo {
+                max-width: 150px;
+                top: 0;
+            }
+
+            .back-button span:last-child {
+                display: none;
+                /* Hide 'Back to Home' text on mobile, keep arrow */
+            }
+
+            .back-button {
+                padding: 0.5rem;
+            }
+        }
+
+        .top-nav {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fixed-bg"></div>
+    <div class="overlay-gradient"></div>
+
+    <section class="content-wrapper">
+        <div class="top-nav">
+            <a href="contact.html" class="button is-glass">
+                <span>Contact</span>
+                <span class="icon is-small"><i class="fas fa-envelope"></i></span>
+            </a>
+        </div>
+
+        <div class="container">
+            <div class="compact-header">
+                <a href="index.html" class="back-button">
+                    <span class="icon"><i class="fas fa-arrow-left"></i></span>
+                    <span>Back to Home</span>
+                </a>
+
+                <img src="images/Quest Logos 04.png" alt="Quest Real Estate Services Logo" class="hero-logo">
+            </div>
+
+            <div class="glass-panel">
+                <div class="columns is-variable is-8">
+                    <!-- Image Column -->
+                    <div class="column is-one-third">
+                        <figure class="image">
+                            <img src="images/claudia-cencelli.jpg" alt="Claudia Cencelli" class="profile-image">
+                        </figure>
+                    </div>
+
+                    <!-- Text Column -->
+                    <div class="column">
+                        <h1 class="title is-2 name-title">Claudia Cencelli</h1>
+                        <span class="subtitle-role">Realtor® | San Diego • La Jolla • Coastal Properties</span>
+
+                        <div class="bio-text">
+                            <p>With more than 20 years of experience as a San Diego real estate agent, Claudia Cencelli
+                                is known for her deep expertise, caring approach, and unwavering commitment to her
+                                clients. Specializing in Coastal properties, La Jolla real estate, and the greater San
+                                Diego market, Claudia brings a rare blend of knowledge, intuition, and heart to every
+                                transaction.</p>
+
+                            <p>Claudia holds advanced expertise in Trust and Probate real estate, National and
+                                International Relocation, and Guided Senior Living Transition, supporting clients
+                                through some of life’s most important real estate transitions with confidence, clarity,
+                                and compassion. Her philosophy, Real Estate Real Simple, reflects her belief that buying
+                                or selling a home should feel seamless, supported, and stress-free.</p>
+
+                            <p>Clients describe Claudia as personable, reliable, and exceptionally knowledgeable. She
+                                offers simple solutions, a hands-on approach, and a level of accountability that makes
+                                people feel truly cared for. Always available, she listens deeply, communicates clearly,
+                                and is known for delivering a “knowledge with a heart” experience.</p>
+
+                            <p>Fluent in English, Italian, and Portuguese, Claudia serves a diverse local and
+                                international community with ease. Outside of real estate, she enjoys hiking, beach
+                                volleyball, classical music, live concerts, exploring quantum physics, cooking, great
+                                food, and traveling.</p>
+
+                            <p>Whether you're buying, selling, relocating, or navigating a complex real estate situation
+                                in San Diego, La Jolla, or the coastal communities, Claudia brings professionalism,
+                                warmth, and real-world expertise to help you achieve your goals—simply and successfully.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
+                <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037"
+                    target="_blank" rel="noopener" class="contact-info-item">
+                    <span class="icon"><i class="fas fa-location-dot"></i></span>
+                    <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
+                </a>
+
+                <a href="tel:8584155455" class="contact-info-item">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <span>858 . 415 . 5455</span>
+                </a>
+
+                <a href="mailto:info@questassetdevelopment.com" class="contact-info-item">
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <span>info@questassetdevelopment.com</span>
+                </a>
+            </div>
+
+            <div style="margin-top: 1.5rem; font-size: 0.75rem; color: #9ca3af;">
+                <p>&copy; 2025 Quest Real Estate Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
