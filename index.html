@@ -182,6 +182,28 @@
       text-align: center;
       color: #e5e7eb;
       /* Light text for dark background */
+      position: absolute;
+      bottom: 2rem;
+      width: 100%;
+      left: 0;
+    }
+
+    .top-nav {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      z-index: 10;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .contact-info-item {
@@ -270,6 +292,14 @@
   <section class="hero is-fullheight hero-bg">
     <div class="overlay">
 
+      <!-- Top Nav -->
+      <div class="top-nav">
+        <a href="mailto:info@questassetdevelopment.com" class="button is-glass">
+          <span>Contact</span>
+          <span class="icon is-small"><i class="fas fa-envelope"></i></span>
+        </a>
+      </div>
+
       <!-- Main Content -->
       <div class="has-text-centered">
         <img src="images/Quest Logos 04.png" alt="Quest Real Estate Services Logo" class="hero-logo">
@@ -279,54 +309,54 @@
 
         <div class="buttons is-centered service-buttons">
           <a href="#" class="button is-glass">
-            <span>Commercial</span>
+            <span>Home Sales</span>
             <span class="icon is-small"><i class="fas fa-arrow-right"></i></span>
           </a>
           <a href="#" class="button is-glass">
-            <span>Management</span>
+            <span>Investment Opportunities</span>
             <span class="icon is-small"><i class="fas fa-arrow-right"></i></span>
           </a>
           <a href="#" class="button is-glass">
-            <span>Residential</span>
+            <span>Property Management</span>
             <span class="icon is-small"><i class="fas fa-arrow-right"></i></span>
           </a>
         </div>
 
-        <!-- Contact Info Block (Formerly Footer) -->
-        <div class="contact-container">
+      </div>
 
-          <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
-            <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" target="_blank"
-              rel="noopener" class="contact-info-item">
-              <span class="icon"><i class="fas fa-location-dot"></i></span>
-              <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
-            </a>
+      <!-- Contact Info Block (Formerly Footer) -->
+      <div class="contact-container">
 
-            <a href="tel:8584155455" class="contact-info-item">
-              <span class="icon"><i class="fas fa-phone"></i></span>
-              <span>858 . 415 . 5455</span>
-            </a>
+        <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
+          <a href="https://maps.google.com/?q=7752%20FAY%20AVE%20SUITE%20J%20LA%20JOLLA%20CA%2092037" target="_blank"
+            rel="noopener" class="contact-info-item">
+            <span class="icon"><i class="fas fa-location-dot"></i></span>
+            <span>7752 Fay Ave · Suite J · La Jolla, CA 92037</span>
+          </a>
 
-            <a href="mailto:info@questassetdevelopment.com" class="contact-info-item">
-              <span class="icon"><i class="fas fa-envelope"></i></span>
-              <span>info@questassetdevelopment.com</span>
-            </a>
-          </div>
+          <a href="tel:8584155455" class="contact-info-item">
+            <span class="icon"><i class="fas fa-phone"></i></span>
+            <span>858 . 415 . 5455</span>
+          </a>
 
-          <div class="is-flex social-links">
-            <a href="https://www.facebook.com/profile.php?id=61573212516623" target="_blank" rel="noopener"
-              aria-label="Facebook">
-              <span class="icon social-icon"><i class="fab fa-facebook"></i></span>
-            </a>
-            <a href="https://www.instagram.com/questreservices/" target="_blank" rel="noopener" aria-label="Instagram">
-              <span class="icon social-icon"><i class="fab fa-instagram"></i></span>
-            </a>
-          </div>
+          <a href="mailto:info@questassetdevelopment.com" class="contact-info-item">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <span>info@questassetdevelopment.com</span>
+          </a>
+        </div>
 
-          <div class="copyright">
-            <p>&copy; <span id="year">2025</span> Quest Real Estate Services. All rights reserved.</p>
-          </div>
+        <div class="is-flex social-links">
+          <a href="https://www.facebook.com/profile.php?id=61573212516623" target="_blank" rel="noopener"
+            aria-label="Facebook">
+            <span class="icon social-icon"><i class="fab fa-facebook"></i></span>
+          </a>
+          <a href="https://www.instagram.com/questreservices/" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="icon social-icon"><i class="fab fa-instagram"></i></span>
+          </a>
+        </div>
 
+        <div class="copyright">
+          <p>&copy; <span id="year">2025</span> Quest Real Estate Services. All rights reserved.</p>
         </div>
 
       </div>
