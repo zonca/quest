@@ -11,6 +11,8 @@
       const emailText = link.querySelector('.email-text');
       if (emailText) {
         emailText.textContent = email;
+      } else {
+        link.textContent = email;
       }
     });
   };
