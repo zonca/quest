@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "npm run build:site",
-    "build:site": "rm -rf dist && mkdir -p dist && cp *.html dist/ && cp -r images dist/ && npx cleancss -o dist/style.css style.css"
+    "build:site": "rm -rf dist && mkdir -p dist && cp *.html dist/ && cp email-obfuscate.js dist/ && cp -r images dist/ && npx cleancss -o dist/style.css style.css"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3"
