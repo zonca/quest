@@ -398,6 +398,57 @@ h3 {
   object-fit: cover;
 }
 
+.profile-image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+}
+
+.profile-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.65));
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  color: #fff;
+  text-align: center;
+  padding: 1.25rem;
+}
+
+.profile-image-wrapper:hover .profile-overlay,
+.profile-image-wrapper:focus-within .profile-overlay {
+  opacity: 1;
+}
+
+.overlay-link {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.overlay-link:hover,
+.overlay-link:focus {
+  background: var(--primary-gold);
+  transform: translateY(-2px);
+  outline: none;
+}
+
 .name-title {
   margin-bottom: 0.5rem;
 }
