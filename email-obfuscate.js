@@ -1,11 +1,26 @@
 (() => {
-  const setEmailLinks = () => {
-    document.querySelectorAll('[data-email-user][data-email-domain]').forEach((link) => {
-      const user = link.getAttribute('data-email-user');
-      const domain = link.getAttribute('data-email-domain');
-      if (!user || !domain) return;
+  const reversedBase64Emails = {
+    info: 't92YuEGbs9mahxGdzVWdxB0bm5Wa', // reverse of base64('info@questlajolla.com')
+    claudia: 't92YuEGbs9mahxGdzVWdxBUYpRWdhx2Y' // reverse of base64('claudia@questlajolla.com')
+  };
 
-      const email = `${user}@${domain}`;
+  const decodeEmail = (key) => {
+    const encoded = reversedBase64Emails[key];
+    if (!encoded) return null;
+    const reversed = encoded.split('').reverse().join('');
+    try {
+      return atob(reversed);
+    } catch (e) {
+      return null;
+    }
+  };
+
+  const setEmailLinks = () => {
+    document.querySelectorAll('[data-email-key]').forEach((link) => {
+      const key = link.getAttribute('data-email-key');
+      const email = decodeEmail(key);
+      if (!email) return;
+
       link.setAttribute('href', `mailto:${email}`);
 
       const emailText = link.querySelector('.email-text');
