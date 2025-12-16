@@ -9,7 +9,8 @@
     if (!encoded) return null;
     const reversed = encoded.split('').reverse().join('');
     try {
-      return atob(reversed);
+      const padded = reversed.padEnd(Math.ceil(reversed.length / 4) * 4, '=');
+      return atob(padded);
     } catch (e) {
       return null;
     }
