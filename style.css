@@ -304,6 +304,15 @@ h3 {
   margin: 0 auto;
 }
 
+.container.is-full-width {
+  max-width: 100% !important;
+  width: 100%;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
 .compact-header {
   position: relative;
   display: flex;
