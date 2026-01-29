@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5841ec2c-8a92-4a92-82d9-576fc7957d3f/deploy-status)](https://app.netlify.com/projects/questassetdevelopment/deploys)
+
 # Quest Real Estate Services
 
 Static site for questlajolla.com, built with Bulma and vanilla JS.
