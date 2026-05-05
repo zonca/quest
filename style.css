@@ -383,6 +383,58 @@ h3 {
   background: rgba(255, 255, 255, 0.15);
 }
 
+.contact-form {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.contact-form .field {
+  margin-bottom: 1.25rem;
+}
+
+.contact-form .label {
+  color: #f9fafb;
+  font-weight: 700;
+}
+
+.contact-form .label span {
+  color: var(--primary-gold);
+}
+
+.contact-form .input,
+.contact-form .textarea,
+.contact-form .select select {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  box-shadow: none;
+}
+
+.contact-form .input::placeholder,
+.contact-form .textarea::placeholder {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.contact-form .input:focus,
+.contact-form .textarea:focus,
+.contact-form .select select:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 0.125em rgba(243, 179, 56, 0.2);
+}
+
+.contact-form .select:not(.is-multiple):not(.is-loading)::after {
+  border-color: var(--primary-gold);
+}
+
+.contact-form option {
+  color: var(--text-dark);
+}
+
+.contact-form .button {
+  min-width: 180px;
+}
+
 .google-form-wrapper {
   width: 100%;
   display: flex;
