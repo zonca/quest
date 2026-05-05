@@ -325,6 +325,20 @@ h3 {
   text-transform: uppercase;
 }
 
+.text-content h2 {
+  font-size: 1.3rem;
+  margin: 2rem 0 0.75rem;
+  text-transform: uppercase;
+}
+
+.text-content a {
+  color: var(--primary-gold);
+}
+
+.text-content a:hover {
+  color: #fff;
+}
+
 .bio-text p,
 .text-content p {
   margin-bottom: 1.5rem;
@@ -362,6 +376,26 @@ h3 {
   text-align: center;
   position: relative;
   z-index: 1;
+}
+
+.footer-legal {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.footer-legal p {
+  margin-bottom: 0.35rem;
+}
+
+.footer-legal a {
+  color: #d1d5db;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.footer-legal a:hover {
+  color: var(--primary-gold);
 }
 
 .back-button {
