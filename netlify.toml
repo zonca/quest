@@ -10,3 +10,13 @@
 [build.processing.css]
   bundle = true
   minify = true
+
+[[redirects]]
+  from = "/repair"
+  to = "/maintenance-request.html"
+  status = 301
+
+[[redirects]]
+  from = "/maintenance"
+  to = "/maintenance-request.html"
+  status = 301

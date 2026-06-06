@@ -686,3 +686,19 @@ h3 {
   font-family: Montserrat, sans-serif;
   color: var(--primary-gold);
 }
+
+/* Maintenance Request Form Styles */
+.contact-form .input[type="file"] {
+    padding-top: 0.5rem;
+    height: auto;
+}
+
+.contact-form .help {
+    color: #e5e7eb;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.mt-6 {
+    margin-top: 3rem !important;
+}
